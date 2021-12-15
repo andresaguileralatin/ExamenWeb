@@ -1,0 +1,32 @@
+<body>
+    <div id="section3">
+        <!-- Start Testimornial Area -->
+        <section id="testimornial-area">
+            <div class="container">
+                <div class="row text-center">
+                    <div *ngFor="let item of ListaItems" class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+                        <div class="testimonial-content">
+                            <img *ngIf="item.id==1 || item.id==5 || item.id==7 || item.id==9" src="https://store.stormfront.co.uk/content/images/thumbs/0010906_iphone_11_g_1jpg.jpeg" width="85%" alt="">
+                            <img *ngIf="item.id==2 || item.id==3 || item.id==6 || item.id==11" src="https://vishalecoms.com/wp-content/uploads/2020/04/29bb1c9908e9d08c606b4988f4b89b16_PS4Pro_3dbox-2-467x400.png" width="100%" alt="">
+                            <img *ngIf="item.id==4 || item.id==8 || item.id==10 || item.id==12" src="https://techaio.com/wp-content/uploads/2016/05/Lenovo-Y700-15.6-Inch-Gaming-Laptop-e1463728693445.jpg" width="93%" alt=""> 
+                            <br><br>
+                            <p class="mini">{{item.marca}}</p>
+                            <p class="mini">{{item.nombre}}</p>
+                            <p *ngIf="item.id==1 || item.id==5 || item.id==7 || item.id==9">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+                            <p *ngIf="item.id==2 || item.id==3 || item.id==6 || item.id==11">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
+                            <p *ngIf="item.id==4 || item.id==8 || item.id==10 || item.id==12">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                            <a [routerLink]="['/detalleItem', item.id]" routerLinkActive="router-link-active" class="content-link">Ver</a>
+                            <p class="precio" style="color: red; font-size: large; font-weight: bolder ;">{{item.precio}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>

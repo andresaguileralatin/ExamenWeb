@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img *ngIf="Item.id==1 || Item.id==5 || Item.id==7 || Item.id==9" src="https://store.stormfront.co.uk/content/images/thumbs/0010906_iphone_11_g_1jpg.jpeg" width="100%" height="100%" alt="">
+            <img *ngIf="Item.id==2 || Item.id==3 || Item.id==6 || Item.id==11" src="https://vishalecoms.com/wp-content/uploads/2020/04/29bb1c9908e9d08c606b4988f4b89b16_PS4Pro_3dbox-2-467x400.png" width="100%" height="100%" alt="">
+            <img *ngIf="Item.id==4 || Item.id==8 || Item.id==10 || Item.id==12" src="https://techaio.com/wp-content/uploads/2016/05/Lenovo-Y700-15.6-Inch-Gaming-Laptop-e1463728693445.jpg" width="100%" height="100%" alt="">
+        </div>
+        <div class="col">
+            <div class="titulo">{{Item.marca}} <i class="fas fa-heart" style="margin-left: 30%;"></i></div>
+            <br>
+            <div class="titulo">{{Item.nombre}}</div>
+            <br>
+            <div class="desc">{{Item.descripcion}}</div> <br>
+            <div class="desc">Conectividad: {{Item.conectividad}}</div> 
+            <div class="desc">Memoria RAM: {{Item.RAM}}</div> 
+            <div class="desc">Procesador: {{Item.procesador}}</div> 
+            <div class="desc">Duracion Bateria: {{Item.bateria}}</div> 
+            <div class="desc">Ancho: {{Item.ancho}}</div> 
+            <br>
+            <h3 class="precio" style="color:#4A4ADF;">{{Item.precio}}</h3>
+            <br><br>
+            <form id="formulario" method="POST">
+            <div>Cantidad:
+                <br>
+                <input #quantidad type="number" style="max-width: 25%;" min="0" max="20" placeholder="1">
+            </div>
+            <br>
+            <button type="button" class="btn btn-outline-dark" (click)="agregarCarro(quantidad.value)">Agregar a la bolsa</button>
+            <br><br>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h2>RECOMENDACIONES</h2>
+        <div *ngFor="let item of Item.recomendaciones" class="col">
+            <button type="button" class="btn btn-outline-dark" style="margin-left: 3%;" [routerLink]="['/detalleItem', item]" routerLinkActive="router-link-active">{{ListaItems[item-1].nombre}}</button>   
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
